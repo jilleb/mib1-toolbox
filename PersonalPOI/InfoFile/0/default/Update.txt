@@ -1,0 +1,27 @@
+device=PersonalPOI
+
+name.default=Personal POI
+name.de_DE=Personal POI
+name.en_GB=Personal POI
+name.en_SA=Personal POI
+name.es_ES=Personal POI
+name.fr_FR=Personal POI
+name.it_IT=Personal POI
+name.nl_NL=Personal POI
+name.pt_PT=Personal POI
+name.ru_RU=Personal POI
+name.pl_PL=Personal POI
+name.cs_CZ=Personal POI
+
+version.default=version 3
+version.de_DE=Version 3
+version.en_GB=Version 3
+version.en_SA=Version 3
+version.es_ES=Versión 3
+version.fr_FR=Version 3
+version.it_IT=Versione 3
+version.nl_NL=Versie 3
+version.pt_PT=Versão 3
+version.ru_RU=версия 3
+version.pl_PL=Wersja 3
+version.cs_CZ=Verze 3

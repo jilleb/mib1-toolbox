@@ -1,0 +1,2108 @@
+####################################################################
+#
+# Custom Green Engineering Menu screen
+# Author:       Jille
+# Version:      0.1A
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+####################################################################
+screen   MQBCoding Main
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "[MQB CODING - MIB1 Toolbox v0.1A]"
+    poll     0
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "Warning: this screen has the potential to break your unit and void your warranty. Be careful."
+    poll     0
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "IMPORTANT: Run this script first to install additional scripts:"
+    poll     0    
+    
+#script
+#   value    sys 1 0x0100 "/scripts/update_toolbox.sh"
+#   label    "Install new scripts and green menu files from SD-card (slot1) "
+    
+
+####################################################################
+screen  Dump MQBCoding
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Make sure there is an SD-card in slot 1"
+    poll     0    
+    
+script 
+   value    sys 1 0x0100 "/scripts/dump_all.sh"
+   label    "Dump skins, startup screens, android auto config, ringtones to SD-card"
+ 
+
+####################################################################
+screen  Customization MQBCoding 
+####################################################################
+screen  Skin Customization 
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "This screen can be used to replace skin-graphics of the MIB."
+    poll     0  
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Skin images.mcf-files and ambienceColorMap.res go into the Skinfiles folder on SD-card in slot 1"
+    poll     0  
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Reboot after installing a new skin or ambienceColorMap."
+    poll     0      
+    
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin0.sh"
+#   label    "Install new graphics for Skin0 from /Skinfiles/Skin0/ on SD"
+#
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin1.sh"
+#   label    "Install new graphics for Skin1 from /Skinfiles/Skin1/ on SD"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin1_ambient.sh"
+#   label    "Install new ambient colors for Skin1 from /Skinfiles/Skin1/ on SD"
+#
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin2.sh"
+#   label    "Install new graphics for Skin2 from /Skinfiles/Skin2/ on SD"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin2_ambient.sh"
+#   label    "Install new ambient colors for Skin2 from /Skinfiles/Skin2/ on SD"
+#
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin3.sh"
+#   label    "Install new graphics for Skin3 from /Skinfiles/Skin3/ on SD"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin3_ambient.sh"
+#   label    "Install new ambient colors for Skin3 from /Skinfiles/Skin3/ on SD"
+#
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin4.sh"
+#   label    "Install new graphics for Skin4 from /Skinfiles/Skin4/ on SD"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin4_ambient.sh"
+#   label    "Install new ambient colors for Skin4 from /Skinfiles/Skin4/ on SD"
+#
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin5.sh"
+#   label    "Install new graphics for Skin5 from /Skinfiles/Skin5/ on SD"   
+#
+#script
+#   value    sys 1 0x0100 "/scripts/install_skin5_ambient.sh"
+#   label    "Install new ambient colors for Skin5 from /Skinfiles/Skin5/ on SD"
+#    
+#script
+#   value    sys 1 0x0100 "/scripts/recovery_skins.sh"
+#   label    "Recovery script to recover all skins and ambienceColorMaps from backup"   
+#   
+#script
+#	value sys 1 0x0100 "/scripts/performePersReset.sh"
+#	label "Reboot"
+
+
+####################################################################
+screen  Startup Customization 
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "This screen can be used to replace startup-graphics of the MIB."
+    poll     0  
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Startup-screen canim-files go into the Splashscreen folder on SD-card in slot 1"
+    poll     0    
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Use the filenames of the dump as a guideline. If you don't use the right filename, it will fail."
+    poll     0    
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "After installing a new startup screen, change coding of module 5F, byte 18."
+    poll     0
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "Set the value to a different screening, reboot, and set it back to the original value."
+    poll     0    
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "This will force the system to re-read the startup-screen files."
+    poll     0   
+    
+#script
+#   value    sys 1 0x0100 "/scripts/install_canim.sh"
+#   label    "Install startup screens (also makes a backup)"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/recovery_canim.sh"
+#   label    "Recover the backup of the original startup screens"  
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0  
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Use the following if you don't have the tools to change coding"
+    poll     0  
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "Put your custom splash.canim in the Splashscreen folder on SD-card"
+    poll     0  
+
+#script
+#   value    sys 1 0x0100 "/scripts/install_forcedcanim.sh"
+#   label    "Force replacing of start menu. No coding needed."  
+#
+#script
+#   value    sys 1 0x0100 "/scripts/recover_forcedcanim.sh"
+#   label    "Recover the forced splashscreen install if something failed."    
+
+####################################################################   
+screen   GreenMenu Customization
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Instructions: Put new .esd files into the GreenMenu folder on your SD-card."
+    poll     0    
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "If you added any new scripts in your custom green menu screen,"
+    poll     0    
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "make sure you install them with the Get new scripts and files function."
+    poll     0   
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "In your ESD-files, point to scripts at /scripts/"
+    poll     0   
+       
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0   
+        
+#script
+#   value    sys 1 0x0100 "/scripts/install_esd.sh"
+#   label    "Install green-menu screen files"   
+   
+####################################################################
+screen Advanced Customization
+
+keyValue
+    value   String per 30 1966083
+    label   "MU Version"
+
+keyValue
+    value   String per 30 1966084
+    label   "Train Info"
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "WARNING: This screen WILL void your warranty"
+    poll     0    
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "And it can and will seriously ruin your day if you don't know what you're doing."
+    poll     0    
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "Be sure to only flash if you're sure you're flashing the right file."
+    poll     0    
+    
+#script
+#   value    sys 1 0x0100 "/scripts/copy_fec.sh"
+#   label    "Import FecContainer.fec from sda0/Advanced/FEC"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/copy_gem.sh"
+#   label    "Import GEM.jar from sda0/Advanced/GEM"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/install_lsdjxe.sh"
+#   label    "Import LSD.jxe"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/privacy_shadow.sh"
+#   label    "Import shadow file"
+#   
+#script
+#   value    sys 1 0x0100 "/scripts/import_hosts.sh"
+#   label    "Import hosts file"
+#  
+#script
+#   value    sys 1 0x0100 "/scripts/flash_ifs.sh"
+#   label    "Flash ifsroot.ifs from sda0/Advanced/IFS"
+
+   
+#############################################
+
+screen  Adaptations  Customization
+#############################################
+screen "CarFunctionsList_BAP" adaptations
+
+BIOSCtrl
+   value int per 28442848 408
+   label "Adaptive cruise control (ACC): "
+   entry	"not coded" 0
+   entry "coded" 1
+   
+BIOSCtrl
+   value int per 28442848 400
+   label "Air condition (master): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+  
+BIOSCtrl
+   value int per 28442848 402
+   label "Air condition (slave1): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+  
+BIOSCtrl
+   value int per 28442848 442
+   label "Air condition (slave2): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+  
+BIOSCtrl
+   value int per 28442848 410
+   label "Air suspension: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+   
+BIOSCtrl
+   value int per 28442848 404
+   label "Auxiliary heater: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+
+BIOSCtrl		
+	value	int per 28442848 476
+	label	"BatteryCtrl: "
+	entry	"not coded" 0
+	entry	"coded" 1	
+
+BIOSCtrl		
+	value	int per 28442848 466
+	label	"BC with Efficiency (BCmE): "
+	entry	"not coded" 0
+	entry	"coded" 1	
+BIOSCtrl		
+	value	int per 28442848 472
+	label	"Brake: "
+	entry	"not coded" 0
+	entry	"coded" 1
+BIOSCtrl
+   value int per 28442848 452
+   label "Braking way reduction (AWV): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 424
+   label "Central lock system (ZV): "
+   entry	"not coded" 0
+   entry	"coded" 1     
+BIOSCtrl
+   value int per 28442848 436
+   label "Central units master (ZEM): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 444
+   label "Charisma: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 432
+   label "Clock: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+   
+BIOSCtrl
+   value    int per 28442848 440
+   label    "Compass: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+
+BIOSCtrl
+   value int per 0 0x50201403
+   label "DisplayConfig: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 0 0x5008CC03
+   label "eCALL: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 0 0x5008F003
+   label "EfficiencyAssist(PEA): "
+   entry	"not coded" 0
+   entry	"coded" 1 
+BIOSCtrl
+   value int per 0 0x5008DC03
+   label "ENI: "
+   entry	"not coded" 0
+   entry	"coded" 1    
+BIOSCtrl
+   value int per 28442848 416
+   label "Exterior light: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 406
+   label "Headup display (HUD): "
+   entry	"not coded" 0
+   entry	"coded" 1  
+BIOSCtrl
+   value int per 28442848 454
+   label "Hybrid: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 414
+   label "Interior light: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 450
+   label "Lane change assist (SWA): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 448
+   label "Lane departure warning (HCA): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl		
+	value	int per 28442848 470
+	label	"MFL joker key: "
+   entry	"not coded" 0
+   entry	"coded" 1	
+BIOSCtrl
+   value	int per 28442848 426
+   label	"Mirror: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 446
+   label "Night vision: "
+   entry	"not coded" 0
+   entry	"coded" 1  
+BIOSCtrl		
+	value	int per 28442848 428
+	label	"On-board computer (BCMFA): "
+   entry	"not coded" 0
+   entry	"coded" 1	
+BIOSCtrl
+   value	int per 28442848 418
+   label	"Parking system (PDC/OPS): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value	int per 28442848 420
+   label	"Parking system (VPS): "
+   entry	"not coded" 0
+   entry	"coded" 1  
+BIOSCtrl
+   value	int per 0 1342760963
+   label	"Pedestrian Assist: "
+   entry	"not coded" 0
+   entry	"coded" 1  
+BIOSCtrl
+   value	int per 28442848 458
+   label	"Rev. seat-belt tensionier (RGS): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value int per 28442848 482
+   label "Range Data (RD): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value	int per 28442848 430
+   label	"Seat memory (master): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value	int per 0 1342761987
+   label	"Seatpneumatic: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value    int per 28442848 460
+   label    "Seat configuration (slave): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value	int per 28442848 434
+   label	"Service interval (SIA): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl		
+	value	int per 28442848 456
+	label	"Sideview camera: "
+   entry	"not coded" 0
+   entry	"coded" 1  
+
+BIOSCtrl
+   value int per 0 0x50201003
+   label "SoundControl: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+
+BIOSCtrl
+   value int per 0 0x50200003
+   label "Spoiler: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+
+BIOSCtrl		
+	value	int per 28442848 474
+	label	"StartStopReasons: "
+	entry	"not coded" 0
+	entry	"coded" 1	
+BIOSCtrl		
+	value	int per 28442848 478
+	label	"Tilt Angle Disp (TAD): "
+	entry	"not coded" 0
+	entry	"coded" 1
+BIOSCtrl
+   value	int per 28442848 480
+   label	"Trailer Assistant (ARA): "
+   entry	"not coded" 0
+   entry	"coded" 1   									
+BIOSCtrl
+   value	int per 28442848 462
+   label	"Traffic sign detection (TSD): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value	int per 28442848 412
+   label	"Tyre pressure control (RDK): "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl
+   value    int per 28442848 438
+   label    "UGDO / Homelink: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+BIOSCtrl		
+	value	int per 28442848 464
+	label	"Weariness recognition (MKE): "
+   entry	"not coded" 0
+   entry	"coded" 1	
+BIOSCtrl
+   value	int per 28442848 422
+   label	"Wiper: "
+   entry	"not coded" 0
+   entry	"coded" 1   
+
+#############################################
+screen "CarFunctionsList_CAN" adaptations
+            
+BIOSCtrl
+   value    int per 0 1343769616
+   label    "RVC as RVC_Low: "
+   entry	"not coded" 0
+   entry	"coded" 1        
+   
+choice
+       	value           per 28442848 521
+       	label           "Display OPS in Kombi"
+        poll            1000   
+#############################################
+screen CarDeviceBusAssignment adaptations
+
+# BAP based features:
+	
+BIOSCtrl
+      value       int per 28442848 409
+      label       "Adaptive Cruise Control (ACC):"
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 401
+      label       "Air condition (master): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 403
+      label       "Air condition (slave1): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 443
+      label       "Air condition (slave2): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 411
+      label       "Air suspension: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 405
+      label       "Auxiliary heater: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 477
+      label       "BatteryCtrl: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 467
+      label       "BC with Efficiency (BCmE): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+		
+BIOSCtrl
+      value       int per 28442848 473
+      label       "Brake: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+		
+BIOSCtrl
+      value       int per 28442848 453
+      label       "Braking way reduction (AWV): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 425
+      label       "Central lock system (ZV): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 445
+      label       "Charisma: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 433
+      label       "Clock: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 0x502014FC
+      label       "DisplayConfig: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 0x5008CCFC 
+      label       "eCALL: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 0x5008F0FC 
+      label       "EfficiencyAssist(PEA): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 0x5008DCFC 
+      label       "ENI: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+		
+	BIOSCtrl
+      value       int per 28442848 417 
+      label       "Exterior light: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+     value       int per 28442848 407
+     label       "Headup display (HUD): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+     value       int per 28442848 455
+     label       "Hybrid: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 415
+      label       "Interior light: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 451
+      label       "Lane change assist (SWA): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+	
+BIOSCtrl
+      value       int per 28442848 449
+      label       "Lane departure warning (HCA): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 427
+      label       "Mirror: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+     value       int per 28442848 447
+     label       "Nightvision: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 429
+      label       "On-board Computer (BCMFA): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+		
+BIOSCtrl
+      value       int per 28442848 419
+      label       "Parking system (PDC/OPS): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 421
+      label       "Parking system (VPS): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 1342761212
+      label       "Pedestrian Assist: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 459
+      label       "Rev. seat-belt tensionier (RGS): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 483
+      label       "Range Data (RD): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 431
+      label       "Seat memory master: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 1342762236
+      label       "Seatpneumatic: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 435
+      label       "Service interval (SIA): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 0x502010FC
+      label       "SoundControl: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 0 0x502000FC
+      label       "Spoiler: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 475
+      label       "StartStopReasons: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 479
+      label       "Tilt Angle Disp (TAD): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 481
+      label       "Trailer Assistant (ARA): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+
+BIOSCtrl
+      value       int per 28442848 463
+      label       "Traffic sign detection (TSD): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 413
+      label       "Tyre pressure control (RDK): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 439
+      label       "UGDO / Homelink:"
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 437
+      label       "Unit master (ZEM): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 465
+      label       "Weariness recognition (MKE): "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+
+BIOSCtrl
+      value       int per 28442848 423
+      label       "Wiper: "
+	entry			"CAN Comfort" 0
+	entry			"CAN Antrieb" 1
+	entry			"CAN Infotainment" 2
+	entry			"CAN Extended" 3
+	entry			"CAN Fahrwerk" 4
+	entry			"CAN Hybrid" 31
+	entry			"CAN MIB" 32
+	entry			"CAN Kombi/Dashbrd" 33			
+	entry			"Flexray" 5
+	entry			"Clamp15" 6	
+	entry			"CLST1 TUEREN" 7
+	entry			"CLST2 ANHAENGER" 8
+	entry			"CLST3 NIGHTVISION" 9
+	entry			"CLST4 SITZ" 10
+	entry			"CLST5 KLAPPEN" 11
+	entry			"CLST6 INFOTAINMENT" 12
+	entry			"CLST7 SUB_INFOTAIN" 13
+	entry			"CLST8 ANZEIGE" 14
+	entry			"CLST9 LADEN" 15		
+	entry			"not available" 63
+    
+#######################################################
+screen RCC adaptations
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Various RCC-specific adaptations. "
+    poll     0  
+
+button
+      value             per 0x01b200e0 530 "FF"
+      label             "Reset SDARS Prescript Activation to Defaults (0xFF)"
+
+slider
+    value       per 28442848 501
+	 label       "Testmode video"
+	 limits		absolute 0 256
+    poll        1000
+
+choice
+    value       per 28442848 502
+    label       "optical wakeup off/on"
+	poll	     1000
+
+BIOSCtrl
+    value       int per 28442848 503
+    label       "summertime algo."
+    entry	    "none" 0
+	  entry	    "manual" 1
+	  entry	    "MESZ" 2
+    entry	    "USA" 3
+    entry	    "NavDB/automatic" 4
+	poll        1000
+
+BIOSCtrl
+    value       int per 28442848 504
+    label       "Multimedia Data"
+    entry	    "rip off imp off" 0
+	entry	    "rip off imp on" 1
+	entry	    "rip on imp off" 2
+    entry	    "rip on imp on" 3
+	poll        1000
+
+BIOSCtrl
+    value       int per 28442848 505
+    label       "Emergency call priv."
+    entry	    "off" 0
+	entry	    "on" 1
+	entry	    "user defined" 255
+	poll        1000
+    
+slider
+    value       per 28442848 506
+	label        "nr. of retries emergency call"
+	limits		absolute 0 256
+    poll        1000
+
+slider
+    value       per 28442848 507
+	label       "basic vol. speech"
+	limits		absolute 0 128
+    poll        1000
+
+slider
+    value       per 28442848 508
+	label       "basic vol. phone"
+	limits		absolute 0 128
+    poll        1000
+    
+slider
+    value       per 28442848 509
+	label       "micro sensitivity"
+	limits		absolute 0 21
+    poll        1000
+
+choice
+    value       per 28442848 510
+    label       "Telefon off/on"
+	poll	    1000
+        
+choice
+    value       per 28442848 511
+    label       "Tel. dataservices off/on"
+	poll	    1000
+        
+choice
+    value       per 28442848 512
+    label       "BT off/on"
+	poll	    1000
+        
+choice
+    value       per 28442848 513
+    label       "BT Sniff off/on"
+	poll	    1000
+        
+choice
+    value       per 28442848 514
+    label       "WLAN off/on"
+	poll	    1000
+
+slider
+    value       per 28442848 515
+	label       "Regionalcodes DVD"
+	limits		absolute 0 8
+    poll        1000
+
+slider
+    value       per 28442848 516
+	label       "Regionalcodes Blueray"
+	limits		absolute 0 3
+    poll        1000
+
+slider
+    value       per 28442848 517
+	label       "R. Codes DVD Counter"
+	limits		absolute 0 5
+    poll        1000
+    
+slider
+    value       per 28442848 518
+	label       "R. Codes Blueray Counter"
+	limits		absolute 0 5
+    poll       1000
+    
+slider
+    value       per 28442848 520
+	label       "Set PayTMC (coarse)"
+	limits		absolute 0 65535 200
+    poll        1000
+
+slider
+    value       per 28442848 531
+	label       "Set PayTMC (fine)"
+	limits		absolute 0 65535
+    poll        1000
+
+choice
+    value       per 28442848 522
+    label       "RVC Video off(FBAS)/on(LVDS)"
+	poll	    1000
+	
+BIOSCtrl
+    value       int per 28442848 523
+    label       "PSD protocol version"
+    entry       "PSD_1.5" 0
+    entry       "PSD_1.4" 1
+    poll        1000
+
+slider 
+   value       per 28442848 524
+	label       "AM Q-Level offset"
+	limits		absolute -31 31
+   poll        1000
+
+slider 
+   value       per 28442848 525
+	label       "FM Q-Level offset"
+	limits		absolute -31 31
+   poll        1000
+
+slider 
+   value       per 28442848 526
+	label       "HF stereo low thresh.(dBuV)"
+	limits		absolute 20 60
+   poll        1000
+
+slider 
+   value       per 28442848 527
+	label       "NF max stereo chan. sep.(dB)"
+	limits		absolute 0 60
+   poll        1000
+
+slider 
+   value       per 28442848 528
+	label       "Mono/stereo hyst.(msec)"
+	limits		absolute 0 20000 100
+   poll        1000
+
+choice
+    value       per 28442848 529
+    label       "TV Tuner Availability"
+	  poll	    1000
+      
+#############################################
+screen  VariantInfo  adaptations
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "This screen is meant to display and/or change variant info. "
+    poll     0  
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "It can render your unit useless if you dont know what you're doing."
+    poll     0  
+
+ 
+keyValue
+    value   String per 0x286f058c 12
+    label   "Variant Info"
+    
+keyValue
+    value   String per 0x286f058c 13
+    label   "Diagnosis Variant"
+    
+    
+BIOSCtrl
+			value	int per 0x286f058c 3
+            label	"Main Unit"
+             entry	"Front MU" 1
+             entry	"Rear MU" 2	
+             entry	"ExBox MU" 3
+             entry	"Front MU MIB2" 4
+             entry	"Rear MU MIB2" 5	
+
+BIOSCtrl		
+	value	int per 0x286f058c 14
+	label	"Keypanel Type"
+	entry	"DEFAULT_TYPE" 0
+   entry	"MIBCAN_MIB1" 1             
+
+BIOSCtrl				
+			value	int per 0x286f058c 4
+			label	"Type"
+                entry	"High" 1
+                entry	"Entry" 2	
+                entry	"Standard" 3
+                entry	"Premium" 4	 
+    
+BIOSCtrl		
+	value	int per 0x286f058c 11
+	label	"Topology"
+    entry	"MQB" 1
+    entry	"MQBTT" 2	
+    entry	"MLB" 3
+    entry	"MLBEVO" 4	
+    entry	"MLBPO" 5
+    entry       "MSS" 6
+ 
+BIOSCtrl        
+    value   int per 0x286f058c 4
+    label   "Type"
+    entry   "High" 1
+    entry   "Entry" 2   
+    entry   "Standard" 3
+    entry   "Premium" 4
+   
+ BIOSCtrl       
+    value   int per 0x286f058c 9
+    label   "Region"
+    entry   "Europe/ROW" 1
+    entry   "Europe" 2  
+    entry   "NAR" 3
+    entry   "ROW" 4 
+    entry   "China" 5
+    entry   "Japan" 6   
+    entry   "Korea" 7
+    entry   "Asia" 8
+    entry   "Taiwan" 9
+   
+  BIOSCtrl      
+    value   int per 0x286f058c 10
+    label   "Brand"
+    entry   "Volkswagen" 1
+    entry   "Audi" 2    
+    entry   "Skoda" 3
+    entry   "Seat" 4    
+    entry   "Porsche" 5
+    entry   "Bentley" 6 
+    entry   "Lamborghini" 7
+  
+choice
+    value   per 0x286f058c 5
+    label   "Feature Tel"
+
+choice
+    value   per 0x286f058c 6
+    label   "Feature Navi"
+   
+choice
+    value   per 0x286f058c 7
+    label   "Feature DAB"
+    
+choice
+    value   per 0x286f058c 8
+    label   "Feature Sirius"
+ 
+choice
+    value   per 0x286f058c 17
+    label   "Feature LTE"  
+
+choice
+    value   per 0x286f058c 18
+    label   "Feature 2D Nav"   
+
+choice
+    value   per 0x286f058c 19
+    label   "Feature MMI Radio"   
+
+ keyValue
+    value    String sys 0x00000000 0
+    label    "----"
+    poll     0
+
+choice
+    value           per 0x286f058c 15
+    label           "ICAN Msg Activation"
+
+
+choice
+    value           per 0x286f058c 16
+    label           "MIBCAN Msg Activation"
+       
+
+####################################################################   
+screen  Updates Customization
+    
+choice
+        value           per 30 1966081
+        label           "User Defined / Custom SWDL"
+        
+choice
+        value           per 30 1966082
+        label           "Ignore Region and Variant"
+
+#script
+#   value    sys 1 0x0100 "/scripts/skipMostPopup.sh"
+#   label    "Set flag to skip the MOST popup error during SWDL."
+#
+#script
+#   value    sys 1 0x0100 "/scripts/removeskipMostPopup.sh"
+#   label    "Remove skipMostPopup flag"
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "DON'T TRIGGER EMERGENCY UNLESS YOU'RE 100% SURE"
+    poll     0
+
+button
+      value             per 30 1966085 ""
+      label             "Trigger Emergency Update"
+
+####################################################################   
+screen  "MIB_Information"  MQBCoding
+
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Screen information:"
+    poll     0
+
+keyValue
+    value   String per 0x6 0x00060002
+    label   "ABT SW version number"
+
+keyValue
+    value   String per 0x6 0x00060003
+    label   "ABT HW version number"
+
+keyValue
+    value   String per 0x6 0x00060004
+    label   "ABT spare part number"
+
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Temperatures:"
+    poll     0
+    
+keyValue
+        value                   int per 8765 3
+        label                   "DVD temp"
+        poll                    2000
+
+keyValue
+        value                   int per 8765 4
+        label                   "DVD min temp"
+        poll                    2000
+        
+keyValue
+        value                   int per 8765 5
+        label                   "DVD max temp"
+        poll                    2000
+        
+keyValue
+        value                   int per 6789 3
+        label                   "Tegra temp"
+        poll                    2000
+        
+keyValue
+        value                   int per 6789 1
+        label                   "Tegra min temp"
+        poll                    2000
+        
+keyValue
+        value                   int per 6789 2
+        label                   "Tegra max temp"
+        poll                    2000
+        
+keyValue
+        value                   int per 0x01b800e1 22
+        label                   "NAD temp"
+        poll                    1000
+        
+keyValue
+        value                   int per 0x01b800e1 100
+        label                   "NAD min temp"
+        poll                    1000
+        
+keyValue
+        value                   int per 0x01b800e1 101
+        label                   "NAD max temp"
+        poll                    1000
+              
+        
+keyValue
+    value			String per 0x01c500e6 401
+	label			"Gyro temperature"
+	poll			1000 
+    
+    keyValue
+    value			int per 0x4B9 102
+	label			"Nav sensor temperature"
+	poll			1000 
+    
+
+####################################################################
+screen   Disclaimer MQBCoding
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Warning: these screens have the potential to break your unit and void your warranty. Be careful."
+    poll     0
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "MQB Coding is not responsible for any troubles to you, your car or software."
+    poll     0
+    
+keyValue
+    value    String sys 0x00000000 0
+    poll     0
+    label    "MQB Coding is always looking for cool hacks and retrofits to increase the potential of the MQB platform."
+keyValue
+    value    String sys 0x00000000 0
+    label    "It's never our intention to harm any person, car or brand."
+    poll     0 
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "If you've paid for this update, you've been scammed."
+    poll     0 
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0 
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Knowledge is power, but only when shared."
+    poll     0 
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0    
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "Copyright MQB-Coding 2019"
+    poll     0    
+
+
+    
+####################################################################
+screen  History MQBCoding
+
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "v0.1 - Initial version"
+    poll     0

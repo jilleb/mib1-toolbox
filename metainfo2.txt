@@ -1,0 +1,55 @@
+#############################################################################   
+#  	
+# This is the description file for the Software Update of Audi components
+#
+#############################################################################
+
+[common]
+skipSaveTrainName = "true"
+vendor = "ESO"
+skipCheckSignatureAndVariant = "true"
+region = "Europe"
+region2 = "RoW"
+variant = "FMU-H-*-*-*"
+release = "MQB Coding Toolbox V0.1A"
+skipMetaCRC = "true"
+MetafileChecksum = "3d1cede10cea07c07c997b5d058ebe0940788fc0"
+skipFileCopyCrc = "true"
+FinalScript = "./common/tools/0/default/finalScript.sh"
+FinalScriptName = "Final Script"
+FinalScriptChecksum = "1D133CCD283DC606BE5838F5E0484A957625BC77"
+FinalScriptMaxTime = "60"
+
+[PersonalPOI]
+VendorInfo = "ESO"
+DeviceDescription = "Personal Poi Packages"
+
+ConfigComponent = "PersonalPOI"
+PacketName = "Package"
+ConfigCheckPath = "PersonalPOI/Package/0/default"
+ConfigFinalizePath = "/net/mmx/mnt/navdb/PersonalPOI/../../../../rcc/mnt/efs-persist/MIBHackingCrew/Package"
+IncludeModules = ",Package,"
+
+[PersonalPOI\Package\0\default\Dir]
+CheckSumSize = "524288"
+CheckSum = "795b6bdf2a072a46030d9ac28a4ce21585aa00ce"
+FileSize = "24745"
+CheckType = "CheckReadData"
+DeleteDestinationDirBeforeCopy = "true"
+Version = "6"
+UpdateOnlyExisting = "false"
+IsDestinationInFFS = "false"
+Source = ""
+Destination = "/net/mmx/mnt/navdb/PersonalPOI/../../../../rcc/mnt/efs-persist/MIBHackingCrew/Package"
+DisplayName = "Personal POIs"
+
+[PersonalPOI\InfoFile\0\default\File]
+CheckSumSize = "524288"
+CheckSum = "1874aa3d47c97f41268aea421653f37f91e772ff"
+Version = "9"
+Source = "Update.txt"
+Destination = "/net/mmx/mnt/navdb/PersonalPOI/../../../../rcc/mnt/efs-persist/MIBHackingCrew/Update.txt"
+DisplayName = "Database Information"
+DeleteDestinationDirBeforeCopy = "true"
+UpdateOnlyExisting = "false"
+FileSize = "629"

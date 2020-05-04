@@ -1,0 +1,35 @@
+FileName = "bitmaps.xml"
+FileSize = "159"
+CheckSumSize = "524288"
+CheckSum = "dd97e6ddd023b58f8c938bcf5f78e9143487d892"
+
+FileName = "lang_map.xml"
+FileSize = "215"
+CheckSumSize = "524288"
+CheckSum = "f8a8295ab9b0b1451347dc80207c450f100ec632"
+
+FileName = "poidata.db"
+FileSize = "19456"
+CheckSumSize = "524288"
+CheckSum = "7b56e3b3d50ba34d5027026555522ef5ddcfdcee"
+
+FileName = "categories.pc"
+FileSize = "809"
+CheckSumSize = "524288"
+CheckSum = "3beca3a842e16ef00c3175cbcd31179178d4122e"
+
+FileName = "strings_de-DE.xml"
+FileSize = "206"
+CheckSumSize = "524288"
+CheckSum = "f2a84f5263f7675887d923fd29752b42d80471b9"
+
+FileName = "bitmaps/000_image.png"
+FileSize = "3404"
+CheckSumSize = "524288"
+CheckSum = "4b0bdd3a5a35566e27bb38d203be4984823911a5"
+
+FileName = "versions.xml"
+FileSize = "496"
+CheckSumSize = "524288"
+CheckSum = "bc38aa443735d2395cd685a252db6bf746a34351"
+
