@@ -14,7 +14,6 @@ Note3: If you're a business who tries to make a profit off of this:  Don't be an
 - An MIB1 HIGH infotainment unit. It will **not** work on any MIB2 or MIB1 Standard units. Discover Media / Compostion Media is not MIB1 HIGH!
 - 1 empty, **FAT32 formatted** SD-card, with enough space. Everything bigger than 1GB is fine
 - Some place to save your backups
-- Developer mode enabled on module 5F (you need VCDS/OBD11/VCP for this!)
 
 ## Optional requirements ##
 - Python v2.7 and/or v3, if you want to extract/compress graphics containers (canim/mif)
@@ -30,7 +29,7 @@ Note3: If you're a business who tries to make a profit off of this:  Don't be an
 - Let the unit run the entire software update. It will reboot several times
 - When it's done, it will ask you to connect a computer and clear the error codes. This is not needed.
 - The unit will restart one final time and you're back at the main car menu. Installation is now done.
-- Hold the MENU button, and go to TESTMODE. On older versions you can go to the developer menu by holding the MENU button for about 10 seconds.
+- Hold the MENU button for about 10 seconds. The developer menu will show. During installation developer mode is activated automatically. If this is not working for some reason on your unit, you need OBD11/VCDS to enable developer mode.
 - Go to the Green Developer Menu
 - There will be an additional menu called "mqbcoding". When you see this, the installation was succesful.
 - You're now done.
@@ -78,13 +77,12 @@ Most screens have a description inside, or show information when running a scrip
 ## dump
 This screen lets you dump skin-files(images.mif files), Android Auto configuration files (gal.json) and Startup screens (.canim files). Make sure an SD-card with enough space is inserted in one of the slots. Dumps will be placed in a folder specific for your unit (FAZIT) and firmware version.
 
-## graphics
-This screen lets you install new images.mif for each of the 6 skin-folders, from the SkinFiles folder on your SD-card. Use the dump files as a guideline. Don't install any files that are meant for other firmwares because it **will** mess up your graphics and functionalities of your infotainment unit.
-This screen will also let you recover the skins from backup, and make you have 3D buildings/terrain in Google Earth (CarNet service). It will **not** enable Google Earth for you.
-![3D google maps](https://i.imgur.com/Jv5Tftm.png)
+## customization
+
+This screen lets you customize a lot of things. Like updating new images.mif for each of the 6 skin-folders, from the SkinFiles folder on your SD-card. Use the dump files as a guideline. Don't install any files that are meant for other firmwares because it **will** mess up your graphics and functionalities of your infotainment unit.
 
 ## greenmenu
-This screen will let you import new .esd files from the GreenMenu folder on your SD-card.
+This screen will let you import new .esd files ad scripts from the GreenMenu folder on your SD-card.
 
 ## advanced
 This is the pro section that can seriously brick your unit. It allows you to dump some advanced files, as well as flash/replace others. The coding-feature isn't really functional yet but it has the potential to replace OBD11/VCDS ;)
