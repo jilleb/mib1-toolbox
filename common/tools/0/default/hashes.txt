@@ -13,8 +13,8 @@ FileSize = "647"
 CheckSum = "9089e2500e0faa8dc02c0e72b6e8b39ef50c220e"
 
 FileName = "finalScript.sh"
-FileSize = "491"
-CheckSum = "1D133CCD283DC606BE5838F5E0484A957625BC77"
+FileSize = "816"
+CheckSum = "024CE60A0785262AE4EFF0E9010D4BB196D9FD16"
 
 FileName = "finalScriptSequence.sh"
 FileSize = "50"
