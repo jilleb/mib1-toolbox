@@ -54,7 +54,7 @@ mount -uw /net/mmx/fs/sda0
 
 mkdir -p $DUMPPATH/Skinfiles
 echo Dumping skin files
-cp -R /net/mmx/mnt/app/eso/hmi/Resources $DUMPPATH/Skinfiles/
+cp -R /net/mmx/mnt/app/eso/hmi/lsd/Resources $DUMPPATH/Skinfiles/
 
 echo Dumping startup screen files
 mkdir -p $DUMPPATH/Splashscreen
