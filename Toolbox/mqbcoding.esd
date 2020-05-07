@@ -2,7 +2,7 @@
 #
 # Custom Green Engineering Menu screen
 # Author:       Jille
-# Version:      0.2A
+# Version:      0.3A
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ####################################################################
@@ -10,23 +10,19 @@ screen   MQBCoding Main
 
 keyValue
     value    String sys 0x00000000 0
-    label    "[MQB CODING - MIB1 Toolbox v0.2A]"
+    label    "[MQB CODING - MIB1 Toolbox v0.3A]"
     poll     0
     
 keyValue
     value    String sys 0x00000000 0
-    label    "Warning: this screen has the potential to break your unit and void your warranty. Be careful."
+    label    "Warning: this screen has the potential to break your unit and void your warranty. "
     poll     0
     
 keyValue
     value    String sys 0x00000000 0
-    label    "IMPORTANT: Run this script first to install additional scripts:"
+    label    "Be careful and have fun."
     poll     0    
-    
-#script
-#   value    sys 1 0x0100 "/scripts/update_toolbox.sh"
-#   label    "Install new scripts and green menu files from SD-card (slot1) "
-    
+
 
 ####################################################################
 screen  Dump MQBCoding
@@ -53,7 +49,7 @@ keyValue
 
 keyValue
     value    String sys 0x00000000 0
-    label    "Skin images.mcf-files and ambienceColorMap.res go into the Skinfiles folder on SD-card in slot 1"
+    label    "Skin images.mcf-files go into the Skinfiles folder on SD-card in slot 1"
     poll     0  
 
 keyValue
@@ -2093,7 +2089,7 @@ keyValue
     
 keyValue
     value    String sys 0x00000000 0
-    label    "Copyright MQB-Coding 2019"
+    label    "Copyright MQB-Coding 2020"
     poll     0    
 
 
@@ -2101,6 +2097,15 @@ keyValue
 ####################################################################
 screen  History MQBCoding
 
+keyValue
+    value    String sys 0x00000000 0
+    label    "v0.3 - Bugfixes"
+    poll     0
+    
+keyValue
+    value    String sys 0x00000000 0
+    label    "v0.2 - Automatically enable devmode during install"
+    poll     0
     
 keyValue
     value    String sys 0x00000000 0

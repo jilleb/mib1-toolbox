@@ -48,7 +48,8 @@ mount -uw /net/mmx/mnt/app
 echo Making backup folders on SD-card.
 mkdir -p $DUMPPATH
 
-echo Dumping, please wait. This can take a while.
+echo "Dumping, please wait. This can take a while."
+echo "Don't leave this screen until there's a message stating that it's done." 
 
 mount -uw /net/mmx/fs/sda0
 
