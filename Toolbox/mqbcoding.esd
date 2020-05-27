@@ -10,7 +10,7 @@ screen   MQBCoding Main
 
 keyValue
     value    String sys 0x00000000 0
-    label    "[MQB CODING - MIB1 Toolbox v0.3A]"
+    label    "[MQB CODING - MIB1 Toolbox v0.31A]"
     poll     0
     
 keyValue
@@ -35,6 +35,10 @@ keyValue
 script 
    value    sys 1 0x0100 "/scripts/dump_all.sh"
    label    "Dump skins, startup screens, android auto config, ringtones to SD-card"
+   
+script 
+   value    sys 1 0x0100 "/scripts/dirlisting.sh"
+   label    "Write a listing of the unit to SD-card"
  
 
 ####################################################################
